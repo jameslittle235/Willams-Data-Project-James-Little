@@ -1,0 +1,29 @@
+﻿@page
+@model FileMonitorModel
+@{
+    ViewData["Title"] = "File Monitor";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <input type="text" class="form-control" id="fileName" name="fileName" />
+
+    <ul class="list-group" id="fileList">
+        @foreach (var fileName in Model.FileNames)
+        {
+            <li class="list-group-item">
+                <a href="javascript:void(0);" onclick="selectFile('@fileName')">@fileName</a>
+            </li>
+        }
+    </ul>
+
+    <button type="submit" class="btn btn-primary" onclick="submit()">Load Selected File</button>
+</form>
+<h3>Output Files</h3>
+<a asp-append-version="true" href="~/output/before_output.json" class="btn btn-primary" download>Download Before Data</a>
+<a asp-append-version="true" href="~/output/after_output.json" class="btn btn-primary" download>Download After Data</a>
+
+<script>function selectFile(fileName) {
+        document.getElementById("fileName").value = fileName;
+    }</script>

@@ -1,0 +1,49 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Willams_Data_Project
+build_property.RootNamespace = Willams_Data_Project
+build_property.ProjectDir = /Users/jameslittle/Projects/Willams Data Project/Willams Data Project/
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/jameslittle/Projects/Willams Data Project/Willams Data Project
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/Pages/FileDownload.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRmlsZURvd25sb2FkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/Pages/fileUpload.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvZmlsZVVwbG9hZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-f1zv40ycv3

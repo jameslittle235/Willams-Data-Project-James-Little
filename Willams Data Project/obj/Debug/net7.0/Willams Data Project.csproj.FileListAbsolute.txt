@@ -1,0 +1,30 @@
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/bin/Debug/net7.0/appsettings.Development.json
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/bin/Debug/net7.0/appsettings.json
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/bin/Debug/net7.0/Willams Data Project.staticwebassets.runtime.json
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/bin/Debug/net7.0/Willams Data Project
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/bin/Debug/net7.0/Willams Data Project.deps.json
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/bin/Debug/net7.0/Willams Data Project.runtimeconfig.json
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/bin/Debug/net7.0/Willams Data Project.dll
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/bin/Debug/net7.0/Willams Data Project.pdb
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/obj/Debug/net7.0/Willams Data Project.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/obj/Debug/net7.0/Willams Data Project.AssemblyInfoInputs.cache
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/obj/Debug/net7.0/Willams Data Project.AssemblyInfo.cs
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/obj/Debug/net7.0/Willams Data Project.csproj.CoreCompileInputs.cache
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/obj/Debug/net7.0/Willams Data Project.MvcApplicationPartsAssemblyInfo.cache
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/obj/Debug/net7.0/Willams Data Project.RazorAssemblyInfo.cache
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/obj/Debug/net7.0/Willams Data Project.RazorAssemblyInfo.cs
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/obj/Debug/net7.0/staticwebassets/msbuild.Willams Data Project.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/obj/Debug/net7.0/staticwebassets/msbuild.build.Willams Data Project.props
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.Willams Data Project.props
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.Willams Data Project.props
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/obj/Debug/net7.0/staticwebassets.pack.json
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/obj/Debug/net7.0/staticwebassets.build.json
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/obj/Debug/net7.0/staticwebassets.development.json
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/obj/Debug/net7.0/scopedcss/Pages/Shared/_Layout.cshtml.rz.scp.css
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/obj/Debug/net7.0/scopedcss/bundle/Willams Data Project.styles.css
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/obj/Debug/net7.0/scopedcss/projectbundle/Willams Data Project.bundle.scp.css
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/obj/Debug/net7.0/Willams Data Project.dll
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/obj/Debug/net7.0/refint/Willams Data Project.dll
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/obj/Debug/net7.0/Willams Data Project.pdb
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/obj/Debug/net7.0/Willams Data Project.genruntimeconfig.cache
+/Users/jameslittle/Projects/Willams Data Project/Willams Data Project/obj/Debug/net7.0/ref/Willams Data Project.dll

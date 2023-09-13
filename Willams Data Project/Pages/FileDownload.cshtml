@@ -1,0 +1,13 @@
+﻿@page "{fileName}"
+@model DownloadFileModel
+
+@{
+    Layout = null;
+}
+
+@{
+    Response.Headers["Content-Disposition"] = $"attachment; filename={Model.FileName}";
+    Response.ContentType = "application/json";
+}
+
+@System.IO.File.ReadAllText(Model.FilePath)
