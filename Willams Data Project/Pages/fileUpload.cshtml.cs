@@ -15,10 +15,9 @@ namespace Willams_Data_Project.Pages
     {
         private readonly IWebHostEnvironment _hostingEnvironment;
 
-        public List<string> FileNames { get; set; } = new List<string>();
+        public List<string> FileNames { get; set; } = new List<string>(); //stores the list of file names in the monitored folder
+        public List<string> LoadedFiles { get; set; } = new List<string>(); //stores the list of file names for transformed data to download
         public string SelectedFileName { get; set; }
-        public List<string> LoadedFiles { get; set; } = new List<string>();
-
         public FileMonitorModel(IWebHostEnvironment hostingEnvironment)
         {
             _hostingEnvironment = hostingEnvironment;
@@ -26,21 +25,19 @@ namespace Willams_Data_Project.Pages
 
         public void OnGet()
         {
-            // Specify the folder path to monitor
-            string folderPath = @"./DataMonitor"; // Change this to your folder path
+            string folderPath = @"./DataMonitor";  // folder to monitor
+
 
             // Get existing files in the folder
             FileNames.AddRange(Directory.GetFiles(folderPath));
 
             // Start monitoring the folder for new files
             var fileWatcher = new FileSystemWatcher(folderPath);
-            //fileWatcher.Created += OnFileCreated;
             fileWatcher.EnableRaisingEvents = true;
         }
 
         public IActionResult OnPost(string filename)
         {
-            Console.WriteLine("filename : " + filename);
 
             if (filename != null)
             {
@@ -52,6 +49,7 @@ namespace Willams_Data_Project.Pages
 
                 foreach (var obj in dataObjects) //prints each object out from the list of objects
                 {
+                    //runs hardcoded filters on the data 
                     if (obj.Channel == "channel 1" && obj.Value == 2)
                     {
                         line channel1obj = new line
@@ -73,13 +71,17 @@ namespace Willams_Data_Project.Pages
                         channel3.Add(channel3obj);
                     }
                 }
+                //converts the object lists of data matching the filter into jsons for exporting
                     string channel1String = JsonSerializer.Serialize(channel1);
                     string channel3String = JsonSerializer.Serialize(channel3);
+                //saves file using json data
                     System.IO.File.WriteAllText("./wwwroot/output/after_output.json", channel1String + channel3String);
+                //creates a json of all the data from the binary file
                     string beforeOutputString = JsonSerializer.Serialize(dataObjects);
+                //saves all binary data to a json file
                     System.IO.File.WriteAllText("./wwwroot/output/before_output.json", beforeOutputString);
-                    Console.WriteLine("created files");
 
+                //adds the file names to the list of files
                     LoadedFiles.Clear();
                     LoadedFiles.Add("before_output.json");
                     LoadedFiles.Add("after_output.json");
@@ -93,17 +95,18 @@ namespace Willams_Data_Project.Pages
         }
         static List<line> ReadDataFile(string filePath)
         {
-            List<line> dataObjects = new List<line>();
+            List<line> dataObjects = new List<line>(); //create a list of lines to effectively store the file in a readable format
 
             try
             {
                 using (StreamReader reader = new StreamReader(filePath))
                 {
-                    bool isFirstLine = true; // Flag to skip the first line
+                    bool isFirstLine = true; // Flag to skip the first line,
+                                             // this means it skips over the header fields which needs to be factored in as it might not always be needed
 
-                    while (!reader.EndOfStream)
+                    while (!reader.EndOfStream) //while theres still data to read from the file
                     {
-                        string line = reader.ReadLine();
+                        string line = reader.ReadLine(); //store one line
 
                         if (isFirstLine)
                         {
@@ -111,9 +114,9 @@ namespace Willams_Data_Project.Pages
                             continue; // Skip the first line
                         }
 
-                        string[] fields = line.Split('|');
+                        string[] fields = line.Split('|'); //split the fields
 
-                        if (fields.Length == 3)
+                        if (fields.Length == 3) //ensure we have the three fields we expected
                         {
                             line obj = new line
                             {
