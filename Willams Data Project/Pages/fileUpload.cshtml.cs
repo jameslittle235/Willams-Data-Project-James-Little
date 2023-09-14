@@ -130,6 +130,16 @@ namespace Willams_Data_Project.Pages
                     };
                     channel1.Add(channel1obj);
                 }
+                if (obj.Channel == "channel 2" && obj.Value == 2)
+                {
+                    line channel1obj = new line
+                    {
+                        Timestamp = obj.Timestamp,
+                        Value = obj.Value,
+                        Channel = obj.Channel
+                    };
+                    channel1.Add(channel1obj);
+                }
                 if (obj.Channel == "channel 3" && obj.Value < 3)
                 {
                     line channel3obj = new line
@@ -142,8 +152,9 @@ namespace Willams_Data_Project.Pages
                 }
             }
             string channel1String = JsonSerializer.Serialize(channel1);
+            string channel2String = JsonSerializer.Serialize(channel2);
             string channel3String = JsonSerializer.Serialize(channel3);
-            System.IO.File.WriteAllText("./wwwroot/output/after_output.json", channel1String + channel3String);
+            System.IO.File.WriteAllText("./wwwroot/output/after_output.json", channel1String + channel2String + channel3String);
             string beforeOutputString = JsonSerializer.Serialize(dataObjects);
             System.IO.File.WriteAllText("./wwwroot/output/before_output.json", beforeOutputString);
 

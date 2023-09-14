@@ -1,36 +1,28 @@
 ﻿<Properties StartupConfiguration="{C070175D-1AC2-448D-8544-9B89472122A4}|https">
   <MonoDevelop.Ide.ItemProperties.Willams_220Data_220Project PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <FunctionBreakpoint enabled="false" hitAction="PrintExpression" traceExpression="received post" line="43" column="13" function="Console.WriteLine" language="C#" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Willams Data Project/Pages/FileDownload.cshtml.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Willams Data Project/Program.cs">
     <Files>
-      <File FileName="Willams Data Project/Program.cs" Line="20" Column="22" IsPinned="True" />
-      <File FileName="Willams Data Project/Pages/fileUpload.cshtml.cs" Line="80" Column="78" />
-      <File FileName="Willams Data Project/Pages/fileUpload.cshtml" Line="29" Column="37" />
+      <File FileName="Willams Data Project/Program.cs" Line="8" Column="1" IsPinned="True" />
+      <File FileName="Willams Data Project/Pages/fileUpload.cshtml" Line="24" Column="25" />
+      <File FileName="Willams Data Project/Pages/fileUpload.cshtml.cs" Line="123" Column="65" />
       <File FileName="Willams Data Project/Pages/FileDownload.cshtml" Line="13" Column="44" />
-      <File FileName="Willams Data Project/Pages/FileDownload.cshtml.cs" Line="7" Column="1" />
+      <File FileName="Willams Data Project/Pages/FileDownload.cshtml.cs" Line="28" Column="1" />
+      <File FileName="Willams Data Project/appsettings.Development.json" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Willams Data Project" expanded="True">
             <Node name="Willams Data Project" expanded="True">
-              <Node name="DataMonitor" expanded="True" />
               <Node name="Pages" expanded="True">
-                <Node name="FileDownload.cshtml" expanded="True">
-                  <Node name="FileDownload.cshtml.cs" selected="True" />
-                </Node>
+                <Node name="FileDownload.cshtml" expanded="True" />
                 <Node name="fileUpload.cshtml" expanded="True" />
               </Node>
-              <Node name="wwwroot" expanded="True">
-                <Node name="lib" expanded="True" />
-              </Node>
+              <Node name="Properties" expanded="True" />
+              <Node name="wwwroot" expanded="True" />
               <Node name="appsettings.json" expanded="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -42,5 +34,11 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <FunctionBreakpoint enabled="false" hitAction="PrintExpression" traceExpression="received post" line="43" column="13" function="Console.WriteLine" language="C#" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>

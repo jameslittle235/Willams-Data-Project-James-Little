@@ -28,19 +28,25 @@
             <a>Channel Name</a>
             <a>Channel Filter</a>
         </li>
-        @foreach (var channelName in Model.channelNames)
-        {
+        <li class="list-group-item">
+            <input type="text" class="form-control" id="channel1Name" name="channel1Name" value="channel 1">
+            <input type="text" class="form-control" id="channel1Filter" name="channel1Filter" />
+        </li>
+        <li class="list-group-item">
+            <input type="text" class="form-control" id="channel2Name" name="channel2Name" value="channel 2">
+            <input type="text" class="form-control" id="channel2Filter" name="channel2Filter" />
+        </li>
+        <li class="list-group-item">
+            <input type="text" class="form-control" id="channel3Name" name="channel3Name" value="channel 3">
+            <input type="text" class="form-control" id="channel3Filter" name="channel3Filter" />
+        </li>
 
-            <li class="list-group-item">
-                <input type="text" class="form-control" id="channelName" name="channelName" value="@channelName">
-                <input type="text" class="form-control" id="channelFilter" name="channelFilter" />
 
-            </li>
-        }
     </ul>
     <button type="submit" class="btn btn-primary" onclick="submit()">Apply Filters</button>
 
 </form>
+
 
 <h3>Output Files</h3>
 <a asp-append-version="true" href="~/output/before_output.json" class="btn btn-primary" download>Download Before Data</a>
