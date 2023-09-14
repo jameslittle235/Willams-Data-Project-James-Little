@@ -22,8 +22,12 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapRazorPages();
+    endpoints.MapFallbackToPage("/fileUpload");
+});
 
-app.MapRazorPages();
 
 app.Run();
 
