@@ -6,7 +6,7 @@
 
 <h2>@ViewData["Title"]</h2>
 
-<form method="post">
+<form method="post" asp-page-handler="SelectFile">
     <input type="text" class="form-control" id="fileName" name="fileName" />
 
     <ul class="list-group" id="fileList">
@@ -18,8 +18,30 @@
         }
     </ul>
 
+
     <button type="submit" class="btn btn-primary" onclick="submit()">Load Selected File</button>
 </form>
+<h3>Channel Filters</h3>
+<form method="post" asp-page-handler="AddChannelFilters">
+    <ul class="list-group" id="channelList">
+        <li>
+            <a>Channel Name</a>
+            <a>Channel Filter</a>
+        </li>
+        @foreach (var channelName in Model.channelNames)
+        {
+
+            <li class="list-group-item">
+                <input type="text" class="form-control" id="channelName" name="channelName" value="@channelName">
+                <input type="text" class="form-control" id="channelFilter" name="channelFilter" />
+
+            </li>
+        }
+    </ul>
+    <button type="submit" class="btn btn-primary" onclick="submit()">Apply Filters</button>
+
+</form>
+
 <h3>Output Files</h3>
 <a asp-append-version="true" href="~/output/before_output.json" class="btn btn-primary" download>Download Before Data</a>
 <a asp-append-version="true" href="~/output/after_output.json" class="btn btn-primary" download>Download After Data</a>
