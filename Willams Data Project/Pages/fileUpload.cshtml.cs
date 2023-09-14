@@ -8,17 +8,21 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.Hosting;
+using System.Threading.Channels;
 
 namespace Willams_Data_Project.Pages
 {
     public class FileMonitorModel : PageModel
     {
         private readonly IWebHostEnvironment _hostingEnvironment;
-
+        public List<string> channelNames { get; set; } = new List<string>();
         public List<string> FileNames { get; set; } = new List<string>();
         public string SelectedFileName { get; set; }
         public List<string> LoadedFiles { get; set; } = new List<string>();
-
+        public List<line> channel1 = new List<line>();
+        public List<line> channel2 = new List<line>();
+        public List<line> channel3 = new List<line>();
+        public List<line> dataObjects = new List<line>();
         public FileMonitorModel(IWebHostEnvironment hostingEnvironment)
         {
             _hostingEnvironment = hostingEnvironment;
@@ -38,58 +42,27 @@ namespace Willams_Data_Project.Pages
             fileWatcher.EnableRaisingEvents = true;
         }
 
-        public IActionResult OnPost(string filename)
+        public IActionResult OnPostSelectFile(string filename)
         {
-            Console.WriteLine("filename : " + filename);
-
+            Console.WriteLine(filename);
             if (filename != null)
             {
-                // Process the chosen file and get two new file names
-                List<line> dataObjects = ReadDataFile(filename); //calls ReadDataFile procedure and returns result to list of objects
-                List<line> channel1 = new List<line>();
-                List<line> channel2 = new List<line>();
-                List<line> channel3 = new List<line>();
-
-                foreach (var obj in dataObjects) //prints each object out from the list of objects
+                dataObjects = ReadDataFile(filename); //calls ReadDataFile procedure and returns result to list of objects
+                Console.WriteLine(dataObjects);
+                var channels = dataObjects  //create a list of lines for each channel that dynamically scales
+                    .GroupBy(p => p.Channel)
+                    .Select(o => o.First());
+                foreach(var channel in channels) //populate channelNames list
                 {
-                    if (obj.Channel == "channel 1" && obj.Value == 2)
-                    {
-                        line channel1obj = new line
-                        {
-                            Timestamp = obj.Timestamp,
-                            Value = obj.Value,
-                            Channel = obj.Channel
-                        };
-                        channel1.Add(channel1obj);
-                    }
-                    if (obj.Channel == "channel 3" && obj.Value < 3)
-                    {
-                        line channel3obj = new line
-                        {
-                            Timestamp = obj.Timestamp,
-                            Value = obj.Value,
-                            Channel = obj.Channel
-                        };
-                        channel3.Add(channel3obj);
-                    }
+                    channelNames.Add(channel.Channel);
                 }
-                    string channel1String = JsonSerializer.Serialize(channel1);
-                    string channel3String = JsonSerializer.Serialize(channel3);
-                    System.IO.File.WriteAllText("./wwwroot/output/after_output.json", channel1String + channel3String);
-                    string beforeOutputString = JsonSerializer.Serialize(dataObjects);
-                    System.IO.File.WriteAllText("./wwwroot/output/before_output.json", beforeOutputString);
-                    Console.WriteLine("created files");
-
-                    LoadedFiles.Clear();
-                    LoadedFiles.Add("before_output.json");
-                    LoadedFiles.Add("after_output.json");
-                
+                    
 
                 return Page();
 
 
             }
-            return null;
+            return Page();
         }
         static List<line> ReadDataFile(string filePath)
         {
@@ -139,12 +112,58 @@ namespace Willams_Data_Project.Pages
 
             return dataObjects;
         }
+        public IActionResult OnPostAddChannelFilters()
+        {
+            Console.WriteLine(Request.Form["channelName"]);
+            Console.WriteLine(Request.Form["channelFilter"]);
+
+
+            foreach (var obj in dataObjects) //prints each object out from the list of objects
+            {
+                if (obj.Channel == "channel 1" && obj.Value == 2)
+                {
+                    line channel1obj = new line
+                    {
+                        Timestamp = obj.Timestamp,
+                        Value = obj.Value,
+                        Channel = obj.Channel
+                    };
+                    channel1.Add(channel1obj);
+                }
+                if (obj.Channel == "channel 3" && obj.Value < 3)
+                {
+                    line channel3obj = new line
+                    {
+                        Timestamp = obj.Timestamp,
+                        Value = obj.Value,
+                        Channel = obj.Channel
+                    };
+                    channel3.Add(channel3obj);
+                }
+            }
+            string channel1String = JsonSerializer.Serialize(channel1);
+            string channel3String = JsonSerializer.Serialize(channel3);
+            System.IO.File.WriteAllText("./wwwroot/output/after_output.json", channel1String + channel3String);
+            string beforeOutputString = JsonSerializer.Serialize(dataObjects);
+            System.IO.File.WriteAllText("./wwwroot/output/before_output.json", beforeOutputString);
+
+            LoadedFiles.Clear();
+            LoadedFiles.Add("before_output.json");
+            LoadedFiles.Add("after_output.json");
+
+
+            return  Page();
+        }
         public class line
         {
             public string Timestamp { get; set; }
             public float Value { get; set; }
             public string Channel { get; set; }
         }
-    }
 
-}
+
+    }
+    
+
+        }
+
